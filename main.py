@@ -1,42 +1,34 @@
-
-
-
-from email.mime import message
-
-from requests import post
-
 from Post import Post
 
-class Post1:
 
-    Post_id = 0
+posts_archive = []
+posts_archive.append( Post("John", "Hello World!"))
+posts_archive.append( Post("Bob", "Hello World!"))
+posts_archive.append( Post("Alice", "Hello World!"))
 
-choice = input("Enter your username: ")
-if choice == "Jason Noble":
-    print("entered username is correct")
-    choice = input("Enter your password: ")
-    if choice == "NobleKing26":
-        print("entered password is correct")
-        choice1 = input("would you like to post a message? (yes/no): ")
-        if choice1 == "yes":
-            print("Jason Noble: This is my first post!")
-            self.post_id = self.post.post_id
-            Post.post_id += 1
-        else:
-            print("You chose not to post a message:")
-    else:
-        print("entered password is incorrect")
-    def __str__(self):
-        return self.post.__str__()
-    
-    def set_message(self, message):
-        self.message = message
-        print("This is my first post!")
-    
-    def get_user_name(self):
-        return self.username
-    
-    def get_post_id(self):
-        return self.post_id
-else:
-    print("entered username is incorrect")
+# for p in posts_archive:
+#     print(p)
+
+
+username = input("Enter your username: ")
+print("Welcome, " + username + "!")
+user_input = input("Please choose an action: new, remove, change user, print, quit")
+while (user_input != "quit"):
+    if user_input == "new":
+        # ask the user for the content of the post and post it
+        content = input("Enter the content of your post: ")
+        new_post = Post(username, content)
+        posts_archive.append(new_post)
+    elif user_input == "remove":
+        pass # TODO: handle the requrested action
+    elif user_input == "change user":
+        pass # TODO: handle the requrested action
+    elif user_input == "print":
+        pass # TODO: handle the requrested action
+    user_input = input("Please choose an action: new, remove, change user, print, quit")
+print("goodbye")
+
+  # what will happen if the user doesn't enter quit
+  # Notice this is tabbed over. This represents the body of
+  # the while loop.
+  
